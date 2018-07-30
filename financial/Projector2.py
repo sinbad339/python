@@ -316,6 +316,7 @@ def state3(row_cnt):
 ##            back_add_taxes = timeline[row_cnt][1] + timeline[row_cnt][2] + taxes
             taxes = calc_taxes(expenses + timeline[row_cnt - 1][7] + health_care + liabilities- ss_income + ss_income*0.85)
             timeline[row_cnt][1] = timeline[row_cnt][1] - expenses - taxes - health_care + ss_income
+            timeline[row_cnt][1] = timeline[row_cnt][1] + timeline[row_cnt-1][2]
             timeline[row_cnt][2] = 0
             timeline[row_cnt][5] = 0      #NQ Taxable Income
             timeline[row_cnt][6] = expenses - ss_income*0.15      #Q Taxable Income
